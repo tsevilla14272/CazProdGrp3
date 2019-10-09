@@ -12,6 +12,10 @@ public class DestroyScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Bubble")
         {
+            GameObject player = GameObject.Find("Player");
+            PlayerScript playerScript = player.GetComponent<PlayerScript>();
+            playerScript.AddScore();
+
             Destroy(gameObject);
         }
     }
